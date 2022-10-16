@@ -1,0 +1,33 @@
+
+.appMain {
+    align-items: center;
+}
+
+.header-grupos {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.header-grupos h1 {
+    font-size: 4rem;
+}
+
+.group-container {
+    border: none;
+    width: 200px;
+    height: 250px;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.group-header {
+    text-align: center;
+    cursor: pointer;
+}
+
+.group-teams {
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
