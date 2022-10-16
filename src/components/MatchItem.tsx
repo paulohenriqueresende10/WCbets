@@ -1,20 +1,25 @@
 import React, { useState } from "react";
 import "../stylesCSS/Bets.css";
-import IMAGES from '../images'
 
 const MatchItem = ({ match }: any) => {
+  console.log(match);
+  
   const [value, setValue] = useState("");
   const [value2, setValue2] = useState("");
 
   const awayTeam = match.awayTeam?.name;
-  const homeTeam = match.homeTeam?.name
+  const homeTeam = match.homeTeam?.name;
+
+  const crestAwayTeam = match.awayTeam?.crest;
+  const cresthomeTeam = match.homeTeam?.crest;
+
 
   return (
     <div className="bet-container ui segment">
       <p className="nation-name">{awayTeam}</p>
       <img
         alt=""
-        src={IMAGES['Brazil']}
+        src={crestAwayTeam}
         style={{ width: "40px" }}
       />
       <input
@@ -30,7 +35,7 @@ const MatchItem = ({ match }: any) => {
       />
       <img
         alt=""
-        src={IMAGES['Argentina']}
+        src={cresthomeTeam}
         style={{ width: "40px" }}
       />
       <p>{homeTeam}</p>

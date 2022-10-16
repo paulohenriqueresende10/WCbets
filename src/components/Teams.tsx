@@ -1,26 +1,29 @@
 import React from "react";
 import "../stylesCSS/Teams.css";
-import IMAGES from '../images'
 
 const Teams = ({ matches, groupLetter }: any) => {
   
-  const renderedList = matches
-    .filter((match: any) => {
-      return match.group === `GROUP_${groupLetter}` && match.matchDay === 1;
-    })
-    .map((match: any, index: any) => {
+  const renderedList = matches.filter((match: any) => {
+      return match.group === `GROUP_${groupLetter}` && match.matchday === 1;
+    }).map((match: any, index: any) => {
       return (
         <div key={index}>
           <div>{match.homeTeam?.name}</div>
           <div>{match.awayTeam?.name}</div>
+          <div>{match.homeTeam?.crest}</div>
+          <div>{match.awayTeam?.crest}</div>
         </div>
       );
     });
 
-  const name1 = renderedList[0].props.children[0].props.children
-  const name2 = renderedList[0].props.children[1].props.children
-  const name3 = renderedList[1].props.children[0].props.children
-  const name4 = renderedList[1].props.children[1].props.children
+  const name1 = renderedList[0].props.children[0].props.children;
+  const name2 = renderedList[0].props.children[1].props.children;
+  const name3 = renderedList[1].props.children[0].props.children;
+  const name4 = renderedList[1].props.children[1].props.children;
+  const crest1 = renderedList[0].props.children[2].props.children;
+  const crest2 = renderedList[0].props.children[3].props.children;
+  const crest3 = renderedList[1].props.children[2].props.children;
+  const crest4 = renderedList[1].props.children[3].props.children;
 
 
   return (
@@ -28,7 +31,7 @@ const Teams = ({ matches, groupLetter }: any) => {
       <div className="teams-container">
         <img
           className="flag"
-          src={IMAGES["Argentina"]}
+          src={crest1}
           alt={`${name1} flag`}
         />
         <p className="country-name">
@@ -38,7 +41,7 @@ const Teams = ({ matches, groupLetter }: any) => {
       <div className="teams-container">
         <img
           className="flag"
-          src={IMAGES["Brazil"]}
+          src={crest2}
           alt={`${name2} flag`}
         />
         <p className="country-name">
@@ -48,7 +51,7 @@ const Teams = ({ matches, groupLetter }: any) => {
       <div className="teams-container">
         <img
           className="flag"
-          src={IMAGES["Argentina"]}
+          src={crest3}
           alt={`${name3} flag`}
         />
         <p className="country-name">
@@ -58,7 +61,7 @@ const Teams = ({ matches, groupLetter }: any) => {
       <div className="teams-container">
         <img
           className="flag"
-          src={IMAGES["Brazil"]}
+          src={crest4}
           alt={`${name4} flag`}
         />
         <p className="country-name">

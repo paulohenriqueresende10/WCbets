@@ -9,8 +9,6 @@ import Bets from "./pages/Bets";
 import CreateBolao from "./pages/CreateBolao";
 import RenderedGroups from "./pages/RenderedGroups";
 import wcMatches from "./api/response.json"
-import { Home } from "./pages/Home";
-
 
 
 const App = () => {
@@ -36,8 +34,7 @@ const App = () => {
       <BrowserRouter>
         <Nav />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/grupos" element={<RenderedGroups setGroupClicked={setGroupClicked} matches={matches} />} />
+          <Route path="/" element={<RenderedGroups setGroupClicked={setGroupClicked} matches={matches} />} />
           <Route path="/tabela-jogos" element={<TabelaJogos matches={matches} groupClicked={groupClicked} setGroupClicked={setGroupClicked} />} />
           <Route path="/create-bolao" element={<CreateBolao />} />
           <Route path="/bets" element={<Bets matches={matches} />} />
